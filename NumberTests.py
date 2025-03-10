@@ -10,8 +10,13 @@ def isThreeOrFive(n):
 
 def isPrime(p):
   """Returns boolean (True/False) if the value given is prime."""
-
-  return True
+  if p == 2:
+    return True
+  for num in range(2, p):
+    if p % num == 0:
+      return False
+  else:
+    return True
 
 def isEven(n):
   """Returns boolean about given value being even."""
@@ -44,15 +49,25 @@ def fibonacciSequence(value):
 #Test your new functions in this main
 def main():
   knownPrimes = [3, 7, 11, 13, 17]
-
-  num = int(input("Enter a number: "))
-
-  if isPrime(num):
-    print("%d is a prime number" %(num))
-
-  if isEven(num):
-    print("%d is an even number" %(num))
-
+ 
+ #problem 10
+ 
+  total = 0
+  for i in range(0, 2000000):
+    if isPrime(i):
+      total += i
+  print(total)
+ 
+  #Problem 7
+ 
+  primeNumbers = 0
+  allNumbers = 2
+  while primeNumbers < 10001:
+    if isPrime(allNumbers):
+      primeNumbers = primeNumbers + 1
+    allNumbers = allNumbers + 1
+  print(allNumbers - 1)
 
 if __name__ == '__main__':
     main()
+  

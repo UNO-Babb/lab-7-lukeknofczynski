@@ -13,6 +13,5 @@ def main():
       total = total + fib
   
   print(total) # final answer
-
 if __name__ == '__main__':
   main()
